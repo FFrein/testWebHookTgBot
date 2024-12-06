@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 const TOKEN = "7707716939:AAG5sYDx1gGEaGOWiY_bjqtBp9ImDHEIFME" // Установите токен через переменную окружения
 const WEBHOOK_SECRET = 'your_webhook_secret'; // Секрет для вебхука
 const PORT = 3000; // Порт для вебхука
-const URL = `https://your-domain.com`; // Замените на ваш домен
+const URLL = `https://testwebhooktgbot.onrender.com`; // Замените на ваш домен
 
 const bot = new TelegramBot(TOKEN);
 const app = express();
@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Устанавливаем вебхук
-bot.setWebHook(`${URL}/webhook/${WEBHOOK_SECRET}`)
+bot.setWebHook(`${URLL}/webhook/${WEBHOOK_SECRET}`)
   .then(() => console.log('Webhook установлен'))
   .catch(err => console.error('Ошибка при установке вебхука:', err));
 
